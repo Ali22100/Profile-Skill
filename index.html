@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>M.Ali Portfolio</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-database.js"></script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.0/tsparticles.bundle.min.js"></script>
+
+  <!-- Loader Styles -->
+  <style>
+    #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #1b2430;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="spinner-border text-success" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <!-- Background Particles -->
+  <div id="particles-js"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+    <a class="navbar-brand fw-bold d-flex align-items-center gap-2 text-success" href="#">
+      <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Logo" width="35" height="35" class="rounded-circle border border-success border-2" />
+      M.ALI
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero d-flex align-items-center justify-content-between px-5 text-light">
+    <div>
+      <h1 class="display-5 fw-bold">Hi,<br> I'm <span class="text-success">Ali</span><br><span id="typewriter"></span></h1>
+      <button class="custom-btn mt-3">
+        <i class="fas fa-paper-plane"></i> Contact Me
+      </button>
+    </div>
+    <div class="profile-img">
+      <img src="img/ali_profile_resized.png" alt="M.Ali" class="rounded-circle border border-success border-3" />
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section py-5 text-light">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="about-heading fw-bold mb-5" data-aos="fade-down">
+          ABOUT <span class="text-success">ME</span>
+        </h2>
+      </div>
+
+      <div class="row align-items-center">
+        <div class="col-md-4 text-center mb-4 mb-md-0" data-aos="fade-down">
+          <div class="glow-wrapper">
+            <img src="img/ali_profile_resized.png" alt="Faraz" class="profile-pic" />
+          </div>
+        </div>
+
+        <div class="col-md-8" data-aos="fade-down">
+          <p>
+<b> Hi, I’m Ali — a passionate Frontend Web Developer with expertise in HTML, CSS, JavaScript, React.js, and Bootstrap.</b>
+I specialize in building modern, user-friendly, and fully responsive websites and web applications. With a strong eye for UI/UX and experience integrating Firebase for real-time functionality, I deliver clean code and seamless performance. I’m dedicated to creating interactive experiences that meet client needs and exceed expectations.
+          </p>
+          <ul class="list-unstyled">
+            <li><strong class="text-success">Full Name :</strong> Muhammad Ali</li>
+            <li><strong class="text-success">Age :</strong> 18 Years</li>
+            <li><strong class="text-success">Email :</strong> maliaabbasianwar@gmail.com</li>
+            <li><strong class="text-success">Phone :</strong> +9237085029</li>
+            <li><strong class="text-success">Location :</strong> Norht Karachi, Karachi, Pakistan</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <h2 data-aos="fade-down">SKILLS</h2>
+  <div class="container">
+    <div class="bar-section">
+      <div class="skill-bar" data-aos="fade-right">
+        <div class="bar-label">HTML</div>
+        <div class="bar-container"><div class="bar-fill" style="width: 75%">75%</div></div>
+      </div>
+      <div class="skill-bar" data-aos="fade-right">
+        <div class="bar-label">CSS</div>
+        <div class="bar-container"><div class="bar-fill" style="width: 70%">70%</div></div>
+      </div>
+      <div class="skill-bar" data-aos="fade-right">
+        <div class="bar-label">JavaScript</div>
+        <div class="bar-container"><div class="bar-fill" style="width: 70%">70%</div></div>
+      </div>
+      <div class="skill-bar" data-aos="fade-right">
+        <div class="bar-label">BOOTSTRAP</div>
+        <div class="bar-container"><div class="bar-fill" style="width: 65%">65%</div></div>
+      </div>
+      <div class="skill-bar" data-aos="fade-right">
+        <div class="bar-label">React JS</div>
+        <div class="bar-container"><div class="bar-fill" style="width: 55%">55%</div></div>
+      </div>
+      <!-- <div class="skill-bar" data-aos="fade-right">
+        <div class="bar-label">React Native</div>
+        <div class="bar-container"><div class="bar-fill" style="width: 60%">60%</div></div>
+      </div>
+      <div class="skill-bar" data-aos="fade-right">
+        <div class="bar-label">Node JS - MongoDB</div>
+        <div class="bar-container"><div class="bar-fill" style="width: 50%">50%</div></div>
+      </div> -->
+    </div>
+    <div class="circle-section">
+      <div class="circle-wrapper">
+        <div class="circle-box" data-aos="zoom-in">
+          <div class="circle">65%</div>
+          <div>Web Dev</div>
+        </div>
+        <!-- <div class="circle-box" data-aos="zoom-in">
+          <div class="circle">65%</div>
+          <div>Mobile Dev</div>
+        </div>
+        <div class="circle-box" data-aos="zoom-in">
+          <div class="circle">55%</div>
+          <div>Database</div>
+        </div>
+        <div class="circle-box" data-aos="zoom-in">
+          <div class="circle">50%</div>
+          <div>Backend</div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+  <section class="sectionThree">
+    
+      <div class="text-center">
+        <h2 class="about-heading fw-bold mb-5" data-aos="fade-down">
+          CONTACT <span class="text-success">ME</span>
+        </h2>
+      </div>
+  <div class="contact-container" data-aos="fade-up">
+  <h1>CONTACT FROM</h1>
+  <form id="contactForm">
+    <input type="text" placeholder="Your Student Name" name="name" required />
+    <input type="email" placeholder="Your Email" name="email" required />
+    <input type="text" placeholder="Addimision Class" name="class" required />
+    <textarea placeholder="Your Message" name="message" rows="5" required></textarea>
+    <button type="submit">Submit Form</button>
+  </form>
+  <p id="responseMsg"></p>
+</div>
+ 
+
+  
+  </section>
+
+<!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Typewriter + Particles -->
+  <script>
+    const texts = ["React Developer|", "Frontend Coder|", "Freelancer|"];
+    let count = 0;
+    let index = 0;
+    let currentText = '';
+    let letter = '';
+
+    (function type() {
+      if (count === texts.length) count = 0;
+      currentText = texts[count];
+      letter = currentText.slice(0, ++index);
+      document.getElementById('typewriter').textContent = letter;
+      if (letter.length === currentText.length) {
+        count++;
+        index = 0;
+        setTimeout(type, 1000);
+      } else {
+        setTimeout(type, 100);
+      }
+    })();
+
+    tsParticles.load("particles-js", {
+      fullScreen: { enable: false },
+      background: { color: { value: "#1b2430" } },
+      particles: {
+        number: { value: 60, density: { enable: true, value_area: 800 } },
+        color: { value: "#ffffff" },
+        links: {
+          enable: true,
+          color: "#ffffff",
+          distance: 150,
+          opacity: 0.4,
+          width: 1,
+        },
+        move: { enable: true, speed: 2 },
+        size: { value: 3 },
+        opacity: { value: 0.5 },
+      },
+    });
+ // ✅ Firebase Configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAhezi8zvVcqwduns1sMvmYLJ352WFpvSc",
+  authDomain: "ruzume-2108e.firebaseapp.com",
+  databaseURL: "https://ruzume-2108e-default-rtdb.firebaseio.com",
+  projectId: "ruzume-2108e",
+  storageBucket: "ruzume-2108e.appspot.com", // <-- Corrected version
+  messagingSenderId: "788051356184",
+  appId: "1:788051356184:web:f0cbdde97039bb1a0b316d",
+  measurementId: "G-ZYMX8ZVSN0"
+};
+
+// ✅ Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+// ✅ Form Submit Handler
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  // ✅ Get Form Values
+  const name = this.name.value.trim();
+  const email = this.email.value.trim();
+  const Class = this.class.value.trim();
+  const personal_message = this.message.value.trim();
+
+  // ✅ Simple Validation
+  if (name && email && Class && personal_message) {
+    document.getElementById('responseMsg').textContent = "Form has been submitted successfully ✅";
+
+    // ✅ Push to Firebase
+    firebase.database().ref("UserData").push({
+      name: name,
+      email: email,
+      class: Class,
+      personal_message: personal_message
+    });
+
+    console.log("✅ Data Sent to Firebase:", { name, email, Class, personal_message });
+    this.reset(); // clear form
+  } else {
+    document.getElementById('responseMsg').textContent = "Please fill all fields!";
+    console.log("❌ Submission Failed: Missing Fields");
+  }
+});
+
+ </script>
+
+  <!-- AOS Animation JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1200,
+      easing: 'ease-in-out',
+      once: false,
+      offset: 120,
+    });
+  </script>
+
+  <!-- Hide Loader After Page Load -->
+  <script>
+    window.addEventListener("load", function () {
+      document.getElementById("loader").style.display = "none";
+    });
+  </script>
+
+</body>
+</html>
