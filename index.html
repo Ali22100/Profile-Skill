@@ -55,7 +55,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
     <a class="navbar-brand fw-bold d-flex align-items-center gap-2 text-success" href="#">
       <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Logo" width="35" height="35" class="rounded-circle border border-success border-2" />
-      M.ALI
+      Muhammad ALI
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
       <span class="navbar-toggler-icon"></span>
@@ -73,7 +73,7 @@
   <!-- Hero Section -->
   <section class="hero d-flex align-items-center justify-content-between px-5 text-light">
     <div>
-      <h1 class="display-5 fw-bold">Hi,<br> I'm <span class="text-success">Ali</span><br><span id="typewriter"></span></h1>
+      <h1 class="display-5 fw-bold">Hi,<br> I'm <span class="text-success">Muhammad Ali</span><br><span id="typewriter"></span></h1>
       <button class="custom-btn mt-3">
         <i class="fas fa-paper-plane"></i> Contact Me
       </button>
@@ -133,11 +133,11 @@ I specialize in building modern, user-friendly, and fully responsive websites an
       </div>
       <div class="skill-bar" data-aos="fade-right">
         <div class="bar-label">BOOTSTRAP</div>
-        <div class="bar-container"><div class="bar-fill" style="width: 65%">65%</div></div>
+        <div class="bar-container"><div class="bar-fill" style="width: 80%">80%</div></div>
       </div>
       <div class="skill-bar" data-aos="fade-right">
         <div class="bar-label">React JS</div>
-        <div class="bar-container"><div class="bar-fill" style="width: 55%">55%</div></div>
+        <div class="bar-container"><div class="bar-fill" style="width: 60%">60%</div></div>
       </div>
       <!-- <div class="skill-bar" data-aos="fade-right">
         <div class="bar-label">React Native</div>
@@ -182,8 +182,8 @@ I specialize in building modern, user-friendly, and fully responsive websites an
   <form id="contactForm">
     <input type="text" placeholder="Enter your name" name="name" required />
     <input type="email" placeholder="Enter your email" name="email" required />
-    <input type="text" placeholder="Enter number" name="class" required />
-    <textarea placeholder="Your Message" name="message" rows="5" required></textarea>
+    <input type="text" placeholder="Enter your number" name="class" required />
+    <textarea placeholder="Enter your message" name="message" rows="5" required></textarea>
     <button type="submit">Submit Form</button>
   </form>
   <p id="responseMsg"></p>
@@ -192,6 +192,65 @@ I specialize in building modern, user-friendly, and fully responsive websites an
 
   
   </section>
+<!-- Main Content Placeholder -->
+<div class="main-content">
+  <p style="text-align: center; padding: 50px;">Scroll down to see the footer</p>
+</div>
+
+<!-- Footer with AOS fade-up animation -->
+<footer class="custom-footer" data-aos="fade-up">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-6 mb-4">
+        <h5>Projects</h5>
+        <ul>
+          <li><a href="#">Z3</a></li>
+          <li><a href="#">CDS</a></li>
+          <li><a href="#">RimsMDD</a></li>
+          <li><a href="#">nmmua.</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 col-sm-6 mb-4">
+        <h5>Us</h5>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Our Journey</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 col-sm-6 mb-4">
+        <h5>Policies</h5>
+        <ul>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 col-sm-6 mb-4">
+        <h5>Get In Touch</h5>
+        <div class="contact-info">
+          <p>+92 (312) 111-1111</p>
+          <p>yourname@example.com</p>
+          <p>Your Company Name, Karachi, Pakistan</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-bar">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap">
+      <div class="social-icons mb-2 mb-md-0">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <div class="copyright-text">
+        &copy; 2025 Your Company Name. All Rights Reserved.
+      </div>
+    </div>
+  </div>
+</footer>
+
 
 <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -258,22 +317,22 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   // ✅ Get Form Values
   const name = this.name.value.trim();
   const email = this.email.value.trim();
-  const Class = this.class.value.trim();
+  const number = this.class.value.trim();
   const personal_message = this.message.value.trim();
 
   // ✅ Simple Validation
-  if (name && email && Class && personal_message) {
+  if (name && email && number && personal_message) {
     document.getElementById('responseMsg').textContent = "Form has been submitted successfully ✅";
 
     // ✅ Push to Firebase
     firebase.database().ref("UserData").push({
       name: name,
       email: email,
-      class: Class,
+      number: number,
       personal_message: personal_message
     });
 
-    console.log("✅ Data Sent to Firebase:", { name, email, Class, personal_message });
+    console.log("✅ Data Sent to Firebase:", { name, email, number, personal_message });
     this.reset(); // clear form
   } else {
     document.getElementById('responseMsg').textContent = "Please fill all fields!";
